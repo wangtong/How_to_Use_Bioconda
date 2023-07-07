@@ -1,6 +1,4 @@
-# How_to_Use_Bioconda
-
-# 如何使用bioconda
+# How to Use Bioconda (如何使用bioconda)
 
 
 ### 1 Download bioconda（下载bioconda）
@@ -100,45 +98,50 @@ mamba update -n base -c defaults conda
 # update all software
 mamba update -y --all
 ```
-### 10 Virtual Enveriment
-#=========================
-#     1 查看虚拟环境      #
-#=========================
+### 10 Virtual Enviroment(查看虚拟环境)
+
+```
+# list env(查看环境)
 conda env list
-#创建虚拟环境
+
+# create env（创建虚拟环境）
 conda create -n test -y
-#激活虚拟环境
+
+# activate env（激活虚拟环境）
 conda activate test
-#安装软件
+
+#install （安装软件）
 mamba install -c bioconda bwa=0.7.15 samtools=1.6 bcftools=1.12
-#退出虚拟环境
+
+#exit env（退出虚拟环境）
 conda deactivate
-
-#=========================
-#   2 创建python 2.7环境   #
-#=========================
-
+```
+### 11 Python 2.7 （创建python 2.7环境）
+```
+# create a python2.7 env ()
 conda create -n py27 python=2.7 -y
-#查看现有虚拟环境
-conda env list
-#激活python2.7环境
+
+#activate python2.7 env (激活python2.7环境)
 conda activate py27
-#查看python版本
+
+# python version(查看python版本)
 python -V
 
-#在python2中安装软件
+#install biosoftware in python 2.7 env (在python2.7环境中安装软件)
 mamba install -y blast=2.7.1
 mamba install -y metaphlan2
 mamba install -y humann2
 mamba install -y htseq
+```
 
-#=========================
-#    3 安装rnaseq分析软件   #
-#=========================
-#创建RNAseq分析环境
+
+### 12 RNAseq (安装rnaseq分析软件)
+
+```
+# create a rnase env (创建RNAseq分析环境)
 conda create -n rnaseq -y
 conda activate rnaseq
-#安装软件
+# install biosoftware in rnaseq env(在rnaseq环境中安装软件)
 mamba install -y gffread
 mamba install -y fastqc
 mamba install -u multiqc
@@ -151,4 +154,4 @@ mamba install -y salmon
 mamba install -y kallisto
 mamba install -y rsem
 mamba install -y trinity
-
+```

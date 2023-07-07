@@ -1,50 +1,56 @@
 # How_to_Use_Bioconda
-# How_to_Use_Bioconda
+
 # 如何使用bioconda
 
 
 ### 1 Download bioconda
 ### 1 下载bioconda
 We choose to use Mabafore for it is running more quickly.
+
 这里选择下载Mambaforge，运行速度更快
 ```
 #wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  
 wget https://github.com/conda-forge/miniforge/releases/download/22.9.0-2/Mambaforge-22.9.0-2-Linux-x86_64.sh
 #https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh
 ```
-### 2 Installing
+### 2 Installation
 ### 2 安装
+
 ```
 sh Mambaforge-Linux-x86_64.sh
 source ~/.bashrc
 ```
-#3 
-#3 添加软件源
+
+### 3 Add a bioconda channel 
+### 3 添加软件源
+
+```
 conda config --add channels bioconda 
 conda config --add channels conda-forge
+```
 
-#安装软件(bwa，samtools，bcftools软件为例)
-#搜索软件    
+### 4 Installation Examples (bwa, samtools ,bcftools as an example)
+### 4 安装软件(bwa，samtools，bcftools软件为例)
+```
+#1 search (搜索软件)    
 conda search bwa    
-#安装软件    
-conda install -y samtools=1.9 bcftools=1.9    
-#查看已安装软件  
+
+#2 install (安装软件)
+conda install -y samtools=1.9 bcftools=1.9    #y for yes
+
+#3 list (查看已安装软件)
 conda list  
-#升级软件  
+
+#4 update (升级软件)
 conda update bwa  
-#移除软件  
+
+#5 remove(移除软件)
 conda remove bwa 
+```
 
-#重新初始化
-conda init 
-#刷新设置
-source ~/.bashrc
-
-
-#=========================
-#        安装常用软件    #
-#=========================
-#利用mamba安装软件
+### 5 Common bioinformatics software
+### 5 安装常用软件   
+```
 mamba install -y bwa 
 mamba install -y samtools
 mamba install -y bcftools
@@ -63,13 +69,17 @@ mamba install -y gfatools
 mamba install -y circos
 mamba install -y entrez-direct
 mamba install -y emboss
-
-#安装数据质控软件
+```
+### 6 QC
+### 6 数据质控软件
+```
 mamba install -y fastqc multiqc 
 mamba install -y trimmomatic
 mamba install -y fastp
-
-#安装基因组拼接相关工具
+```
+### 7 Assembly
+### 7 安装基因组拼接相关工具
+```
 mamba install -y velvet
 mamba install -y flye
 mamba install -y miniasm
@@ -80,21 +90,25 @@ mamba install -y quast
 mamba install -y racon
 mamba install -y miniasm
 mamba install -y nanopolish
+```
 
-#安装基因功能分析软件
+### 8 Genome Analysis
+### 8 安装基因功能分析软件
+```
 mamba install -y prodigal
 mamba install -y glimmer
 mamba install -y augustus
 mamba install -y trf
+```
 
-#=========================
-#     升级bioconda软件    #
-#=========================
-# 更新基础conda
+### 9 Update
+### 9 升级bioconda软件
+```
+# update conda
 mamba update -n base -c defaults conda
-#更新全部包
+# update all software
 mamba update -y --all
-
+```
 #####################################################
 #                   七十三、虚拟环境                 #
 #####################################################
@@ -148,3 +162,4 @@ mamba install -y salmon
 mamba install -y kallisto
 mamba install -y rsem
 mamba install -y trinity
+

@@ -1,5 +1,8 @@
 # How to Use Bioconda (如何使用bioconda)
 
+This repository is used to tell you how to use bioconda and give you some example for installing biosoftwares.
+
+这个仓库用来教你如何使用bioconda工具，里面列出了一些如何安装生物软件的案例。
 
 ### 1 Download bioconda（下载bioconda）
 We choose to use Mabafore for it is running more quickly.
